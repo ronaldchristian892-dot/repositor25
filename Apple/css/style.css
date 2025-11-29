@@ -1,0 +1,203 @@
+:root {
+    --apple-dark: #1d1d1f; 
+    --apple-text-light: #f5f5f7;
+    --apple-link: #0071e3; /* Color Manzana Azul */
+    --apple-hover: #0077ff;
+    --light-bg: #fafafa; 
+    --card-bg: #fff; 
+    --border-color: #eee; 
+    --transition-speed: 0.35s; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background: var(--light-bg);
+    color: var(--apple-dark);
+}
+
+html {
+    scroll-behavior: smooth; 
+    scroll-padding-top: 56px; 
+}
+
+/* NAVBAR Y NAVEGACIÓN */
+.navbar { 
+    background: var(--apple-dark);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}
+
+.navbar-brand { 
+    font-weight: 700; 
+}
+
+.nav-link {
+    color: var(--apple-text-light) !important;
+    font-weight: 500; 
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+/* MEJORA: Indicador de enlace activo (la línea de Apple) */
+.nav-link.active::after { 
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--apple-link); 
+    border-radius: 2px; 
+    transition: width var(--transition-speed), left var(--transition-speed);
+}
+.nav-link:hover {
+    color: var(--apple-hover) !important;
+}
+
+/* SECCIÓN HÉROE */
+.hero { 
+    background: url('img/banner.jpg') center/cover no-repeat; 
+    height: 90vh;
+    text-align: center; 
+    color: white;
+    position: relative;
+}
+
+.hero::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+    z-index: 1;
+}
+
+.hero .container, .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-weight: 800; 
+    font-size: 4.5rem; 
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); 
+}
+
+/* BOTONES */
+.btn-outline-light { 
+    border-radius: 50px; 
+    padding: 12px 35px; 
+    font-weight: 600; 
+}
+
+.btn-primary { 
+    background: var(--apple-link); 
+    border-color: var(--apple-link); 
+    border-radius: 50px; 
+    padding: 8px 25px; 
+    font-weight: 600; 
+    transition: all var(--transition-speed); 
+    box-shadow: 0 6px 15px rgba(0, 113, 227, 0.3); 
+}
+
+.btn-primary:hover {
+    background: var(--apple-hover);
+    border-color: var(--apple-hover); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0, 119, 255, 0.4); 
+}
+
+/* ESTILOS DE SECCIÓN */
+#about h2, #experiencia h2, #productos h2 {
+    color: var(--apple-dark);
+}
+#about h4, #experiencia h4, #productos h4 {
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
+}
+
+/* AJUSTES CRÍTICOS PARA LA IMAGEN #about */
+#about .row {
+    align-items: center; 
+}
+#about img {
+    width: 100%; 
+    object-fit: cover; 
+    max-height: 650px; 
+    object-position: center; 
+}
+
+
+/* TARJETAS DE PRODUCTO ÉPICAS */
+.product-item { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 15px; 
+    overflow: hidden; 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); 
+    transition: all var(--transition-speed); 
+}
+
+.product-item:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.product-img { 
+    aspect-ratio: 1/1; 
+    overflow: hidden; 
+    border-bottom: 1px solid var(--border-color); 
+}
+.product-img img {
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+}
+.product-item:hover .product-img img {
+    transform: scale(1.05); 
+}
+
+.product-price { 
+    color: var(--apple-link);
+    font-weight: 700; 
+    font-size: 1.2rem; 
+}
+
+/* PIE DE PÁGINA Y BRINDIS */
+.toast-container { 
+    z-index: 1090; 
+}
+.toast-header { 
+    background-color: var(--apple-text-light); 
+    color: var(--apple-dark);
+}
+
+/* --- ESTILOS DEL PIE DE PIE MEJORADO --- */
+.footer-links a {
+    color: #ccc;
+    text-decoration: none; 
+    transition: color var(--transition-speed);
+    display: block; 
+    padding-bottom: 5px; 
+}
+
+.footer-links a:hover {
+    color: var(--apple-hover); 
+    text-decoration: underline; 
+}
+
+.social-links-footer a {
+    color: var(--apple-text-light); 
+    transition: color var(--transition-speed), transform var(--transition-speed); 
+}
+
+.social-links-footer a:hover {
+    color: var(--apple-hover); 
+    transform: translateY(-2px); 
+}
+
+/* Títulos del pie de página más limpios */
+.bg-dark h5 { 
+    font-weight: 600; 
+}
